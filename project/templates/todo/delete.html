@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deleting</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        <form method="post">{% csrf_token %}
+            <div class="text-center mt-10">
+                <p class="mt-10">Are you sure you want to delete "{{ object }}"?</p>
+            </div>
+            <div class="text-center">
+                <input class="btn btn-danger" type="submit" value="Confirm">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container pt-4">
+        {% for task in object_list %}
+            <div class="row mt-3">
+                <div class="col">
+                    <h3><a href="{% url 'todo:detail' task.slug %}">{{task.title}}</a></h3>
+                </div>
+                <div class="col pt-2 text-right">
+                    <h6>{{task.time }}</h6>
+                </div>
+            </div>
+            <h5>{{task.description }}</h5>
+            <hr>
+        {% endfor %}
+        <a href="{% url 'todo:add_task' %}"  class="btn btn-info float-right">Add Task</a>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
